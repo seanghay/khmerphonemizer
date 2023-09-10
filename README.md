@@ -82,3 +82,11 @@ Without these awesome projects from awesome people, this wouldn't be possible.
 - [rhasspy/gruut](https://github.com/rhasspy/gruut) (Michael Hansen et al., 2020)
 - [OpenFst](https://www.openfst.org/) (Kyle Gorman et al.)
 - [AdolfVonKleist/Phonetisaurus](https://github.com/AdolfVonKleist/Phonetisaurus) (Josef Novak et al., 2017)
+
+
+### Related
+
+- [khmercut](https://github.com/seanghay/khmercut)
+- [khmernormalizer](https://github.com/seanghay/khmernormalizer)
+- [khmer-latin-name-transformer](https://github.com/seanghay/khmer-latin-name-transformer)
+- [awesome-khmer-language](https://github.com/seanghay/awesome-khmer-language)
