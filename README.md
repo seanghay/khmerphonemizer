@@ -46,6 +46,8 @@ Output
   ['t', 'eː']])
 ```
 
+Check out the [examples/](./examples/) for more examples.
+
 ### API
 
 - `phonemize` Tokenize input text into words and phonemize each word and returns a tuple with tokens and phonemes.
