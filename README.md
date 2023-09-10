@@ -2,6 +2,8 @@
 
 A Free, Standalone and Open-Source Khmer Grapheme-to-Phonemes.
 
+[[Colab]](https://colab.research.google.com/drive/1GHTjbMF52ijJuK0HdTU1LzkkQ6sK535e?usp=sharing)
+
 ### Installation
 
 ```shell
@@ -51,6 +53,7 @@ Check out the [examples/](./examples/) for more examples.
 ### API
 
 - `phonemize` Tokenize input text into words and phonemize each word and returns a tuple with tokens and phonemes.
+
   - `input_str: str` Text with multiple words.
   - `beam: int = 500` number of beam search.
   - `min_beam: int = 100`: minimum number of beam search.
