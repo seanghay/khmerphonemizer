@@ -20,7 +20,7 @@ setuptools.setup(
         "Natural Language :: English",
     ],
     python_requires=">=3.8",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["examples"]),
     package_dir={"khmerphonemizer": "khmerphonemizer"},
     package_data={"khmerphonemizer": ["km_phonemizer.npz", "km_lexicon.tsv"]},
     include_package_data=True,

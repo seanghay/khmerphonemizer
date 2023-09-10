@@ -13,10 +13,54 @@ pip install khmerphonemizer
 ```python
 from khmerphonemizer import phonemize
 
-text = "សួស្ដីមនុស្សខ្មែរ"
+text = "នៅលើលោកនេះមិនមានមនុស្សណាម្នាក់ចេះអស់ទេ"
 result = phonemize(text)
-# =>
+
+print(result)
 ```
+
+Output
+
+```python
+(['នៅលើ',
+  'លោក',
+  'នេះ',
+  'មិន',
+  'មាន',
+  'មនុស្ស',
+  'ណា',
+  'ម្នាក់',
+  'ចេះ',
+  'អស់',
+  'ទេ'],
+ [['n', 'ɨ', 'w', 'l', 'əː'],
+  ['l', 'oː', 'k'],
+  ['n', 'i', 'h'],
+  ['m', 'ɨ', 'n'],
+  ['m', 'i', 'ə', 'n'],
+  ['m', 'ɔ', 'n', 'u', 'h'],
+  ['n', 'aː'],
+  ['m', 'n', 'ĕ', 'ə', 'ʔ'],
+  ['c', 'e', 'h'],
+  ['ʔ', 'ɑ', 'h'],
+  ['t', 'eː']])
+```
+
+### API
+
+- `phonemize` Tokenize input text into words and phonemize each word and returns a tuple with tokens and phonemes.
+  - `input_str: str` Text with multiple words.
+  - `beam: int = 500` number of beam search.
+  - `min_beam: int = 100`: minimum number of beam search.
+  - `beam_score: float = 0.6` beam search score.
+  - `use_lexicon: bool = True` Use lexicon dictionary for known words.
+
+- `phonemize_single` Phonemize a single word.
+  - `word: str` Text with single Khmer or English word only.
+  - `beam: int = 500` number of beam search.
+  - `min_beam: int = 100`: minimum number of beam search.
+  - `beam_score: float = 0.6` beam search score.
+  - `use_lexicon: bool = True` Use lexicon dictionary for known words.
 
 ### License
 
