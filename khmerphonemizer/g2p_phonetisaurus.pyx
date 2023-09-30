@@ -6,52 +6,13 @@ See bin/fst2npz.py to convert an FST to a numpy graph.
 Reference: 
   https://github.com/rhasspy/gruut/blob/master/gruut/g2p_phonetisaurus.py
 """
-
-import argparse
-import logging
-import os
-import sys
-import time
 import typing
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
 
 NUMPY_GRAPH = typing.Dict[str, np.ndarray]
-
-
-def do_predict(args):
-    """Predict phonemes for words"""
-    args.graph = Path(args.graph)
-    phon_graph = PhonetisaurusGraph.load(args.graph, preload=args.preload_graph)
-
-    if args.words:
-        # Arguments
-        words = args.words
-    else:
-        # Standard input
-        words = sys.stdin
-
-        if os.isatty(sys.stdin.fileno()):
-            print("Reading words from stdin...", file=sys.stderr)
-
-    # Guess pronunciations
-    for word, graphemes, phonemes in phon_graph.g2p(
-        words,
-        grapheme_separator=args.grapheme_separator,
-        max_guesses=args.max_guesses,
-        beam=args.beam,
-        min_beam=args.min_beam,
-        beam_scale=args.beam_scale,
-    ):
-        if not phonemes:
-            continue
-
-        print(word, args.phoneme_separator.join(phonemes))
-
-
 _NOT_FINAL = object()
-
 
 class PhonetisaurusGraph:
     """Graph of numpy arrays that represents a Phonetisaurus FST

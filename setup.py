@@ -1,9 +1,11 @@
 import setuptools
+from Cython.Build import cythonize
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
+    ext_modules = cythonize("khmerphonemizer/g2p_phonetisaurus.pyx"),
     name="khmerphonemizer",
     version="0.0.1",
     description="A Free, Standalone and Open-Source Khmer Grapheme-to-Phonemes.",
@@ -25,6 +27,7 @@ setuptools.setup(
     package_data={"khmerphonemizer": ["km_phonemizer.npz", "km_lexicon.tsv"]},
     include_package_data=True,
     install_requires=[
+        "cython",
         "numpy>=1.19.0,<2.0.0",
         "khmercut",
     ],
