@@ -7,7 +7,7 @@ with open("README.md", "r") as f:
 setuptools.setup(
     ext_modules = cythonize("khmerphonemizer/g2p_phonetisaurus.pyx"),
     name="khmerphonemizer",
-    version="0.0.1",
+    version="0.0.2",
     description="A Free, Standalone and Open-Source Khmer Grapheme-to-Phonemes.",
     long_description=long_description,
     long_description_content_type="text/markdown",
