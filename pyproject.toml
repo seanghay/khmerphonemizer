@@ -4,6 +4,7 @@ requires = [
     "setuptools-scm[toml]==7.1.0",
     "Cython==0.29.33",
     "khmercut",
+    "wheel",
 ]
 build-backend = "setuptools.build_meta"
 
