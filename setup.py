@@ -6,5 +6,5 @@ setup(
             name="khmerphonemizer.g2p_phonetisaurus",
             sources=["khmerphonemizer/g2p_phonetisaurus.pyx"],
         ),
-    ]
+    ],
 )
