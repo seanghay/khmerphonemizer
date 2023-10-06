@@ -1,3 +1,4 @@
+#cython: language_level=3
 """
 Guess word pronunciations using a Phonetisaurus FST
 
