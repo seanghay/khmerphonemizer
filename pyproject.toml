@@ -5,6 +5,7 @@ requires = [
     "Cython==0.29.33",
     "khmercut",
     "wheel",
+    "numpy",
 ]
 build-backend = "setuptools.build_meta"
 
