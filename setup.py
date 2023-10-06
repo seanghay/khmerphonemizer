@@ -1,10 +1,10 @@
-from setuptools import Extension, setup
+import numpy as np
+from setuptools import setup
+from Cython.Build import cythonize
 
 setup(
-    ext_modules=[
-        Extension(
-            name="khmerphonemizer.g2p_phonetisaurus",
-            sources=["khmerphonemizer/g2p_phonetisaurus.pyx"],
-        ),
-    ],
+    ext_modules=cythonize(
+        "khmerphonemizer/g2p_phonetisaurus.pyx",
+        include_path=[np.get_include()],
+    ),
 )

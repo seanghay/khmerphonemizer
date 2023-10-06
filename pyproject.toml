@@ -40,6 +40,7 @@ where = ["khmerphonemizer"]
 khmerphonemizer = "khmerphonemizer"
 
 [tool.setuptools.package-data]
+
 khmerphonemizer = [
     "km_phonemizer.npz",
     "km_lexicon.tsv",
