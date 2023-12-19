@@ -1,16 +1,10 @@
 [build-system]
-requires = [
-    "setuptools==67.4.0",
-    "setuptools-scm[toml]==7.1.0",
-    "Cython==0.29.33",
-    "khmercut",
-    "wheel",
-    "numpy",
-]
+requires = ["setuptools==67.4.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "khmerphonemizer"
+version = "0.0.3"
 authors = [{ name = "Seanghay Yath", email = "seanghay.dev@gmail.com" }]
 description = "A Free, Standalone and Open-Source Khmer Grapheme-to-Phonemes."
 readme = "README.md"
@@ -24,7 +18,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
-dynamic = ["version"]
+dependencies = ["khmercut", "sosap"]
 
 [project.urls]
 repository = "https://github.com/seanghay/khmerphonemizer"
@@ -32,18 +26,8 @@ repository = "https://github.com/seanghay/khmerphonemizer"
 [tool.setuptools]
 include-package-data = true
 
-[tool.setuptools_scm]
-
-[tool.setuptools.packages.find]
-where = ["khmerphonemizer"]
-
 [tool.setuptools.package-dir]
 khmerphonemizer = "khmerphonemizer"
 
 [tool.setuptools.package-data]
-
-khmerphonemizer = [
-    "km_phonemizer.npz",
-    "km_lexicon.tsv",
-    "g2p_phonetisaurus.pyx",
-]
+"*" = ["g2p.fst", "km_lexicon.tsv"] # <-- this changed
